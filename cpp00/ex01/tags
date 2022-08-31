@@ -1,0 +1,43 @@
+$(NAME	Makefile	/^$(NAME): $(OBJS)$/
+.PHONY	Makefile	/^.PHONY: all $(NAME) clean fclean re$/
+.cpp.o	Makefile	/^.cpp.o:$/
+CC	Makefile	/^CC = c++$/
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror -g -std=c++98$/
+CONTACT_HPP	Contact.hpp	14
+Contact	Contact.cpp	/^Contact::Contact( void )$/
+Contact	Contact.hpp	19
+HEADER_HPP	header.hpp	14
+Mmain.cpp	main.cpp	/^int	main(void)$/
+NAME	Makefile	/^NAME = myOwnPhoneBook$/
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/
+PHONEBOOK_HPP	PhoneBook.hpp	14
+PhoneBook	PhoneBook.cpp	/^PhoneBook::PhoneBook( void )$/
+PhoneBook	PhoneBook.hpp	18
+SRCS	Makefile	/^SRCS =	Contact.cpp \\$/
+addContact	PhoneBook.cpp	/^void PhoneBook::addContact( std::string f_name, st/
+all	Makefile	/^all: $(NAME)$/
+clean	Makefile	/^clean:$/
+contacts	PhoneBook.hpp	22
+createContact	main.cpp	/^void	createContact( PhoneBook *phonebook )$/
+darkest_secret	Contact.hpp	27
+fclean	Makefile	/^fclean: clean$/
+first_name	Contact.hpp	23
+getDarkestSecret	Contact.cpp	/^std::string	Contact::getDarkestSecret( void )$/
+getFirstName	Contact.cpp	/^std::string	Contact::getFirstName( void )$/
+getLastName	Contact.cpp	/^std::string	Contact::getLastName( void )$/
+getNickName	Contact.cpp	/^std::string	Contact::getNickName( void )$/
+getPhoneNumber	Contact.cpp	/^std::string	Contact::getPhoneNumber( void )$/
+last_name	Contact.hpp	24
+listContacts	PhoneBook.cpp	/^void PhoneBook::listContacts( void )$/
+n_contacts	PhoneBook.hpp	23
+nick_name	Contact.hpp	25
+phone_number	Contact.hpp	26
+re	Makefile	/^re: fclean all$/
+setDarkestSecret	Contact.cpp	/^void	Contact::setDarkestSecret( std::string d_secr/
+setFirstName	Contact.cpp	/^void	Contact::setFirstName( std::string f_name )$/
+setLastName	Contact.cpp	/^void	Contact::setLastName( std::string l_name )$/
+setNickName	Contact.cpp	/^void	Contact::setNickName( std::string n_name )$/
+setPhoneNumber	Contact.cpp	/^void	Contact::setPhoneNumber( std::string p_number/
+show	Contact.cpp	/^void	Contact::show( int index )$/
+~Contact	Contact.cpp	/^Contact::~Contact( void )$/
+~PhoneBook	PhoneBook.cpp	/^PhoneBook::~PhoneBook( void )$/
