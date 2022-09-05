@@ -1,0 +1,44 @@
+$(NAME	Makefile	/^$(NAME): $(OBJS)$/
+.PHONY	Makefile	/^.PHONY: all $(NAME) clean fclean re$/
+.cpp.o	Makefile	/^.cpp.o:$/
+CC	Makefile	/^CC = c++$/
+CFLAGS	Makefile	/^CFLAGS = -Wall -Wextra -Werror -g -std=c++98$/
+FIXED_HPP	Fixed.hpp	2
+FIXED_HPP	save.hpp	2
+Fixed	Fixed.cpp	/^Fixed::Fixed( const int n )$/
+Fixed	Fixed.cpp	/^Fixed::Fixed( const float n )$/
+Fixed	Fixed.cpp	/^Fixed::Fixed( const Fixed& c)$/
+Fixed	Fixed.hpp	4
+Fixed	save.hpp	4
+Fixed::Fixed	Fixed.cpp	/^Fixed::Fixed( void ) : value(0)$/
+Mmain.cpp	main.cpp	/^int main( void ) {$/
+NAME	Makefile	/^NAME = fixed$/
+OBJS	Makefile	/^OBJS = $(SRCS:.cpp=.o)$/
+SRCS	Makefile	/^SRCS =	main.cpp \\$/
+all	Makefile	/^all: $(NAME)$/
+clean	Makefile	/^clean:$/
+fclean	Makefile	/^fclean: clean$/
+getRawBits	Fixed.cpp	/^int	Fixed::getRawBits( void ) const$/
+n_bits	Fixed.hpp	9
+n_bits	save.hpp	9
+operator!=	Fixed.cpp	/^bool	Fixed::operator!=( const Fixed& other ) const/
+operator*	Fixed.cpp	/^Fixed	Fixed::operator*( const Fixed& other ) const/
+operator+	Fixed.cpp	/^Fixed	Fixed::operator+( const Fixed& other ) const/
+operator++	Fixed.cpp	/^Fixed&	Fixed::operator++( void )$/
+operator++	Fixed.cpp	/^Fixed	Fixed::operator++( int n )$/
+operator-	Fixed.cpp	/^Fixed	Fixed::operator-( const Fixed& other ) const/
+operator/	Fixed.cpp	/^Fixed	Fixed::operator\/( const Fixed& other ) const/
+operator<	Fixed.cpp	/^bool	Fixed::operator<( const Fixed& other ) const$/
+operator<<	Fixed.cpp	/^std::ostream& operator<<( std::ostream& os, const /
+operator<=	Fixed.cpp	/^bool	Fixed::operator<=( const Fixed& other ) const/
+operator=	Fixed.cpp	/^Fixed& Fixed::operator=( const Fixed& c )$/
+operator==	Fixed.cpp	/^bool	Fixed::operator==( const Fixed& other ) const/
+operator>	Fixed.cpp	/^bool	Fixed::operator>( const Fixed& other ) const$/
+operator>=	Fixed.cpp	/^bool	Fixed::operator>=( const Fixed& other ) const/
+re	Makefile	/^re: fclean all$/
+setRawBits	Fixed.cpp	/^void	Fixed::setRawBits( const int raw )$/
+toFloat	Fixed.cpp	/^float	Fixed::toFloat( void ) const$/
+toInt	Fixed.cpp	/^int	Fixed::toInt( void ) const$/
+value	Fixed.hpp	8
+value	save.hpp	8
+~Fixed	Fixed.cpp	/^Fixed::~Fixed( void )$/
