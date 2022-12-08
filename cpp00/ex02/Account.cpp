@@ -26,6 +26,7 @@ Account::Account( int initial_deposit ) : _amount(initial_deposit)
 Account::~Account( void )
 {
     Account::_displayTimestamp();
+    Account::_nbAccounts--;
     std::cout << 
     "index:" << this->_accountIndex << 
     ";amount:" << this->_amount <<
@@ -128,7 +129,7 @@ void    Account::_displayTimestamp( void )
     day = lt->tm_mday;
     hour = lt->tm_hour;
     min = lt->tm_min;
-    // sec = lt->tm_sec;
+    sec = lt->tm_sec;
     // year = 1992;
     // month = 1;
     // day = 4;

@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:52:36 by afaby             #+#    #+#             */
-/*   Updated: 2022/08/04 18:29:14 by afaby            ###   ########.fr       */
+/*   Updated: 2022/12/08 13:59:36 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,11 @@ int	main(void)
 		if (input.compare("ADD") == 0)
 			createContact(&phonebook);
 		else if (input.compare("SEARCH") == 0)
-			phonebook.listContacts();
+		{
+			if (phonebook.getNContacts() > 0)
+				phonebook.listContacts();
+			else
+				std::cerr << "ERROR: no contacts in phonebook." << std::endl;
+		}
 	}
 }

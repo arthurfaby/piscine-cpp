@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:15:04 by afaby             #+#    #+#             */
-/*   Updated: 2022/08/04 17:04:22 by afaby            ###   ########.fr       */
+/*   Updated: 2022/11/15 16:13:13 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 		std::string d_secret
 	);
 	void	listContacts( void );
-	
+	int		getNContacts( void );	
 };
 
 #endif

@@ -5,4 +5,7 @@ void randomChump( std::string name );
 int main( void )
 {
     randomChump("TestZombie");
+    randomChump("TestZombie2");
+    randomChump("");
+    randomChump("TestZombie3");
 }

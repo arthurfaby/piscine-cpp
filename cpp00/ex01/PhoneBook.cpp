@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:14:59 by afaby             #+#    #+#             */
-/*   Updated: 2022/08/04 18:38:03 by afaby            ###   ########.fr       */
+/*   Updated: 2022/11/15 16:22:10 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,21 @@ void PhoneBook::listContacts( void )
 		while (++i < 8)
 			this->contacts[i].overview(i);
 	}
-	do {
+	std::cout << "Choose an index : ";
+	std::getline( std::cin, line );
+	input = std::atoi(line.c_str());
+	while ( !(isdigit(line.at(0)) && line.length() == 1 
+			&& input >= 0 && input < this->n_contacts ))
+	{
+		std::cerr << "ERROR: invalid input." << std::endl;
 		std::cout << "Choose an index : ";
 		std::getline( std::cin, line );
-		input = std::stoi(line);
-	} while (
-		!(input >= 0 && input < 8 && this->n_contacts >= 8)
-		&& !(input < this->n_contacts && this->n_contacts < 8)
-	);
+		input = std::atoi(line.c_str());
+	}
 	this->contacts[input].show();
+}
+
+int	PhoneBook::getNContacts( void )
+{
+	return (this->n_contacts);
 }

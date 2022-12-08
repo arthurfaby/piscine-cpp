@@ -12,10 +12,10 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 all: $(NAME)
 
 .cpp.o:
-	c++ -Wall -Wextra -Werror -g -c $<
+	c++ $(CFLAGS) -c $<
 
 $(NAME): $(OBJS)
-	c++ -Wall -Wextra -Werror -g $(OBJS) -o $(NAME)
+	c++ $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf $(OBJS)
