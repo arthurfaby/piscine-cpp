@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 13:52:36 by afaby             #+#    #+#             */
-/*   Updated: 2022/12/08 13:59:36 by afaby            ###   ########.fr       */
+/*   Updated: 2022/12/16 14:11:47 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,23 @@ void	createContact( PhoneBook *phonebook )
 	do {
 		std::cout << "First name : ";
 		std::getline( std::cin, first_name );
-	} while (first_name.empty());
+	} while (std::cin && first_name.empty());
 	do {
 		std::cout << "Last name : ";
 		std::getline( std::cin, last_name );
-	} while (last_name.empty());
+	} while (std::cin && last_name.empty());
 	do {
 		std::cout << "Nick name : ";
 		std::getline( std::cin, nick_name );
-	} while (nick_name.empty());
+	} while (std::cin && nick_name.empty());
 	do {
 		std::cout << "Phone number : ";
 		std::getline( std::cin, phone_number );
-	} while (phone_number.empty());
+	} while (std::cin && phone_number.empty());
 	do {
 		std::cout << "Darkest secret : ";
 		std::getline( std::cin, darkest_secret );
-	} while (darkest_secret.empty());
+	} while (std::cin && darkest_secret.empty());
 	phonebook->addContact( first_name, last_name, nick_name, phone_number, darkest_secret);
 }
 
@@ -69,13 +69,14 @@ int	main(void)
 	PhoneBook 	phonebook;
 	std::string	input;
 
-	while (input.compare("EXIT"))
+	while (std::cin)
 	{
 		do {
 			std::cout << "Enter a command : (ADD, SEARCH, EXIT)" << std::endl;
 			std::getline( std::cin, input );
 		} while (
-			input.compare("ADD") != 0
+			std::cin
+			&& input.compare("ADD") != 0
 			&& input.compare("SEARCH") != 0
 			&& input.compare("EXIT") != 0
 		);
@@ -88,5 +89,11 @@ int	main(void)
 			else
 				std::cerr << "ERROR: no contacts in phonebook." << std::endl;
 		}
+		else if (input.compare("EXIT") == 0)
+		{
+			std::cout << "See you soon !" << std::endl;
+			return (0);
+		}
 	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:14:59 by afaby             #+#    #+#             */
-/*   Updated: 2022/11/15 16:22:10 by afaby            ###   ########.fr       */
+/*   Updated: 2022/12/16 14:12:02 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void PhoneBook::listContacts( void )
 	std::cout << "Choose an index : ";
 	std::getline( std::cin, line );
 	input = std::atoi(line.c_str());
-	while ( !(isdigit(line.at(0)) && line.length() == 1 
+	while ( std::cin && !(isdigit(line.at(0)) && line.length() == 1 
 			&& input >= 0 && input < this->n_contacts ))
 	{
 		std::cerr << "ERROR: invalid input." << std::endl;
