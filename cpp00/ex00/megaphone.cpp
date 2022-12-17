@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 14:12:50 by afaby             #+#    #+#             */
-/*   Updated: 2022/08/04 11:29:18 by afaby            ###   ########.fr       */
+/*   Updated: 2022/12/17 09:54:09 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 void	megaphone(char *arg)
 {
-	size_t	i;
+	size_t		i;
+	std::string	line;
 
+	line = arg;
 	i = 0;
-	while (i < strlen(arg))
+	while (i < line.length())
 	{
-		std::cout << (char)toupper(arg[i]);
+		std::cout << (char)toupper(line[i]);
 		i++;
 	}
 }

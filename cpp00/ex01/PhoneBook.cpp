@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 14:14:59 by afaby             #+#    #+#             */
-/*   Updated: 2022/12/16 14:12:02 by afaby            ###   ########.fr       */
+/*   Updated: 2022/12/16 17:19:32 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,19 @@ void PhoneBook::listContacts( void )
 	int			i;
 	std::string	line;
 	int			input;
+	int			max_contact;
 
 	i = -1;
 	std::cout << "   index  | FirstName| LastName | NickName " << std::endl;
 	if (this->n_contacts < 8)
 	{
+		max_contact = this->n_contacts;
 		while (++i < this->n_contacts)
 			this->contacts[i].overview(i);
 	}
 	else
 	{
+		max_contact = 8;
 		while (++i < 8)
 			this->contacts[i].overview(i);
 	}
@@ -55,7 +58,7 @@ void PhoneBook::listContacts( void )
 	std::getline( std::cin, line );
 	input = std::atoi(line.c_str());
 	while ( std::cin && !(isdigit(line.at(0)) && line.length() == 1 
-			&& input >= 0 && input < this->n_contacts ))
+			&& input >= 0 && input < max_contact))
 	{
 		std::cerr << "ERROR: invalid input." << std::endl;
 		std::cout << "Choose an index : ";
