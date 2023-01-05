@@ -1,9 +1,5 @@
 SRCS =	\
 		main.cpp \
-		char.cpp \
-		int.cpp \
-		float.cpp \
-		double.cpp \
 		\
 
 OBJS = $(SRCS:.cpp=.o)
