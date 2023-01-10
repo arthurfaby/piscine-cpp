@@ -39,13 +39,23 @@ int main( void ) {
 	std::cout << "a / b : " << (a / b) << std::endl;
 	std::cout << "b / a : " << (b / a) << std::endl;
 
+	std::cout << " ##### ++ ##### " << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
+
+	std::cout << " ##### -- ##### " << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl;
+
 	std::cout << b.toFloat() << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 	
 	return 0;
 }

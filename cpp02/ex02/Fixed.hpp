@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 16:52:53 by afaby             #+#    #+#             */
+/*   Updated: 2023/01/10 16:52:57 by afaby            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -40,10 +53,10 @@ public:
 	int		toInt( void ) const;
 	float	toFloat( void ) const;
 
-	static float	min( Fixed& a, Fixed& b );
-	static float	min( const Fixed& a, const Fixed& b );
-	static float	max( Fixed& a, Fixed& b );
-	static float	max( const Fixed& a, const Fixed& b );	
+	static Fixed&	min( Fixed& a, Fixed& b );
+	static Fixed&	min( const Fixed& a, const Fixed& b );
+	static Fixed&	max( Fixed& a, Fixed& b );
+	static Fixed&	max( const Fixed& a, const Fixed& b );	
 };
 
 std::ostream& operator<<( std::ostream& os, const Fixed& c);

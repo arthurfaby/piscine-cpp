@@ -4,29 +4,34 @@
 
 Fixed::Fixed( void ) : value(0)
 {
+//	std::cout << "Default constructor called." << std::endl;
 	return ;
 }
 
 Fixed::Fixed( const int n )
 {
+//	std::cout << "Int constructor called." << std::endl;
 	this->value = n * pow(2, this->n_bits);
 	return ;
 }
 
 Fixed::Fixed( const float n )
 {
+//	std::cout << "Float constructor called." << std::endl;
 	this->value = roundf(n * pow(2, this->n_bits));
 	return ;
 }
 
 Fixed::Fixed( const Fixed& c)
 {
-	this->value = c.getRawBits();
+//	std::cout << "Copy constructor called." << std::endl;
+	*this = c;
 	return ;
 }
 
 Fixed& Fixed::operator=( const Fixed& c )
 {
+//	std::cout << "Copy assignment operator called" << std::endl;
 	this->value = c.getRawBits();
 	return *this;
 }
@@ -97,6 +102,12 @@ Fixed	Fixed::operator/( const Fixed& other ) const
 	Fixed	new_fixed;
 	int		new_value;
 
+	if (other.value == 0)
+	{
+		std::cerr << "Impossible operation (dividing by 0).";
+		new_fixed.value = 0;
+		return (new_fixed);
+	}
 	new_value = roundf((this->toFloat() / other.toFloat()) * pow(2, this->n_bits));
 	new_fixed.value = new_value;
 	return (new_fixed);
@@ -138,6 +149,7 @@ Fixed	Fixed::operator--( int n )
 
 Fixed::~Fixed( void )
 {
+//	std::cout << "Destructor called." << std::endl;
 	return ;
 }
 
@@ -168,30 +180,30 @@ int	Fixed::toInt( void ) const
 	return (res);
 }
 
-float	Fixed::min( Fixed& a, Fixed& b )
+Fixed&	Fixed::min( Fixed& a, Fixed& b )
 {
-	if (a.toFloat() < b.toFloat())
-		return (a.toFloat());
-	return (b.toFloat());
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-float	Fixed::min( const Fixed& a, const Fixed& b )
+Fixed&	Fixed::min( const Fixed& a, const Fixed& b )
 {
-	if (a.toFloat() < b.toFloat())
-		return (a.toFloat());
-	return (b.toFloat());
+	if (a < b)
+		return ((Fixed&)a);
+	return ((Fixed&)b);
 }
 
-float	Fixed::max( Fixed& a, Fixed& b )
+Fixed&	Fixed::max( Fixed& a, Fixed& b )
 {
-	if (a.toFloat() > b.toFloat())
-		return (a.toFloat());
-	return (b.toFloat());
+	if (a > b)
+		return (a);
+	return (b);
 }
 
-float	Fixed::max( const Fixed& a, const Fixed& b )
+Fixed&	Fixed::max( const Fixed& a, const Fixed& b )
 {
-	if (a.toFloat() > b.toFloat())
-		return (a.toFloat());
-	return (b.toFloat());
+	if (a > b)
+		return ((Fixed&)a);
+	return ((Fixed&)b);
 }
