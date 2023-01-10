@@ -1,20 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 09:25:46 by afaby             #+#    #+#             */
+/*   Updated: 2023/01/10 09:25:47 by afaby            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 Zombie* zombieHorde( int N, std::string name );
 
 int main( void )
 {
     Zombie *horde;
-    int size;
-	int	i;
+    int size(10);
+	int	i(0);
 
-    size = 50;
-	i = 0;
-    horde = zombieHorde(size, "test");
+    horde = zombieHorde(size, "Rosita");
     while (i < size) {
-		std::cout << "Horde[" << i << "] : " << &horde[i] << std::endl;
         horde[i].announce();
-        delete &horde[i];
 		i++;
     }
-	//delete horde;
+	delete[] horde;
 }

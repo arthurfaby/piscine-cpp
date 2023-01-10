@@ -4,6 +4,7 @@
 Zombie::Zombie( void )
 {
     this->name = "";
+    std::cout << "Construct zombie " << this->name << std::endl;
 }
 
 Zombie::~Zombie( void )
@@ -14,4 +15,9 @@ Zombie::~Zombie( void )
 void    Zombie::announce( void )
 {
     std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->name = name;
 }

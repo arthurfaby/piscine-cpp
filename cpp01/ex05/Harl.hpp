@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/10 10:17:06 by afaby             #+#    #+#             */
+/*   Updated: 2023/01/10 10:17:15 by afaby            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
 #ifndef HARL_HPP
 # define HARL_HPP
 
@@ -5,7 +18,6 @@
 
 class Harl
 {
-
 
 private:
 	std::string	strings[4];
@@ -21,5 +33,6 @@ public:
 	~Harl( void );
 
 	void	complain( std::string level );
+
 };
 #endif
