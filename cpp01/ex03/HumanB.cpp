@@ -13,7 +13,10 @@ HumanB::~HumanB( void )
 void    HumanB::attack( void )
 {
     if (!this->weapon)
+	{
         std::cout << this->name << "attacks with their arms" << std::endl;
+		return; 
+	}
     std::cout << this->name << "attacks with their " << this->weapon->getType() << std::endl;
 }
 
