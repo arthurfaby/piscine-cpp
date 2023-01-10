@@ -16,6 +16,7 @@ int main( void )
 		Weapon club2 = Weapon("crowbar");
 		HumanB jim("Jim");
 
+		jim.attack();
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");
