@@ -21,14 +21,16 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 
 FragTrap::FragTrap( const FragTrap& c ) : ClapTrap(c)
 {
-	(void) c;
 	std::cout << "[FragTrap] Copy constructor called." << std::endl;
 	return ;
 }
 
 FragTrap& FragTrap::operator=( const FragTrap& c )
 {
-	(void) c;
+	this->name = c.name;
+	this->hit_points = c.hit_points;
+	this->energy_points = c.energy_points;
+	this->attack_damage = c.attack_damage;
 	std::cout << "[FragTrap] Copy assignment operator called." << std::endl;
 	return *this;
 }
@@ -41,5 +43,5 @@ FragTrap::~FragTrap( void )
 
 void	FragTrap::highFiveGuys( void ) 
 {
-	std::cout << this->name << " : \"Can someone high five me ? :)\"" << std::endl;
+	std::cout << "[FragTrap method] " << this->name << " : \"Can someone hive five me ? :)\"" << std::endl;
 }

@@ -2,53 +2,88 @@
 
 int	main( void )
 {
-	DiamondTrap ct("Polo");
-	DiamondTrap st = DiamondTrap("Myreille");
-	DiamondTrap ft = DiamondTrap("Philibert");
+	std::cout << std::endl << " ########## Default constructor. ##########" << std::endl;  
+	{
+		DiamondTrap dt;
+	
+		dt.attack("A");
+		dt.attack("B");
+		dt.attack("C");
+		dt.takeDamage(5);
+		dt.takeDamage(4);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
+		dt.takeDamage(50);
+		dt.highFiveGuys();
+		dt.whoAmI();
+	}
+	std::cout << std::endl << " ########## Name constructor. ##########" << std::endl;  
+	{
+		DiamondTrap dt("Polo");
+	
+		dt.attack("A");
+		dt.attack("B");
+		dt.attack("C");
+		dt.takeDamage(5);
+		dt.takeDamage(4);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
+		dt.takeDamage(50);
+		dt.highFiveGuys();
+		dt.whoAmI();
+	}
+	std::cout << std::endl << " ########## Copy constructor. ##########" << std::endl;  
+	{
+		DiamondTrap	tmp("Polo");
+		DiamondTrap	dt(tmp);
 
-	ct.attack("A");
-	ct.attack("B");
-	ct.attack("C");
-	ct.takeDamage(5);
-	ct.takeDamage(4);
-	ct.beRepaired(1);
-	ct.beRepaired(1);
-	ct.beRepaired(1);
-	ct.beRepaired(1);
-	ct.beRepaired(1);
-	ct.beRepaired(1);
-	ct.attack("Hortense");
-	ct.takeDamage(50);
+		dt.attack("A");
+		dt.attack("B");
+		dt.attack("C");
+		dt.takeDamage(5);
+		dt.takeDamage(4);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
+		dt.takeDamage(50);
+		dt.highFiveGuys();
+		dt.whoAmI();
+	}
+	std::cout << std::endl << " ########## Copy assignement operator ##########" << std::endl;  
+	{
+		DiamondTrap	tmp("Polo");
+		DiamondTrap	dt;
 
-	st.attack("A");
-	st.attack("B");
-	st.attack("C");
-	st.takeDamage(5);
-	st.takeDamage(4);
-	st.beRepaired(1);
-	st.beRepaired(1);
-	st.beRepaired(1);
-	st.beRepaired(1);
-	st.beRepaired(1);
-	st.beRepaired(1);
-	st.attack("Wilfried");
-	st.takeDamage(50);
-	st.guardGate();
-
-	ft.attack("A");
-	ft.attack("B");
-	ft.attack("C");
-	ft.takeDamage(5);
-	ft.takeDamage(4);
-	ft.beRepaired(1);
-	ft.beRepaired(1);
-	ft.beRepaired(1);
-	ft.beRepaired(1);
-	ft.beRepaired(1);
-	ft.beRepaired(1);
-	ft.attack("Pilippe");
-	ft.takeDamage(50);
-	ft.highFiveGuys();
-	ft.whoAmI();
+		dt = tmp;
+		dt.attack("A");
+		dt.attack("B");
+		dt.attack("C");
+		dt.takeDamage(5);
+		dt.takeDamage(4);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
+		dt.takeDamage(50);
+		dt.highFiveGuys();
+		dt.whoAmI();
+	}
 	return (0);
 }
