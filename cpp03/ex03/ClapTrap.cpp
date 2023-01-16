@@ -21,12 +21,9 @@ ClapTrap::ClapTrap( std::string _name ) :
 	return ;
 }
 
-ClapTrap::ClapTrap( const ClapTrap& c ) :
-	name(c.name),
-	hit_points(c.hit_points),
-	energy_points(c.energy_points),
-	attack_damage(c.attack_damage)
+ClapTrap::ClapTrap( const ClapTrap& c )
 {
+	*this = c;
 	return ;
 }
 
@@ -47,16 +44,16 @@ ClapTrap::~ClapTrap( void )
 
 void	ClapTrap::attack( const std::string& target )
 {
-	if (this->energy_points > 0)
+	if (this->hit_points > 0 && this->energy_points > 0)
 	{
 		std::cout << "[ClapTrap method] " << this->name << " attacks " << target 
 			<< ", causing " << this->attack_damage << " points of damage!" << std::endl;
 		this->energy_points--;
 	}
-	else
-	{
+	else if (this->hit_points > 0)
 		std::cout << "[ClapTrap method] " << this->name << " is really tired and can't attack." << std::endl; 
-	}
+	else
+		std::cout << "[ClapTrap method] " << this->name << " is dead and can't attack." << std::endl; 
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
@@ -66,21 +63,21 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	if (this->hit_points <= 0)
 	{
 		this->hit_points = 0;
-		std::cout << "[ClapTrap method] " << this->name << " is now with Daddy Johnny..." << std::endl; 
+		std::cout << "[ClapTrap method] " << this->name << " is dead..." << std::endl; 
 	}
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	if (this->energy_points > 0)
+	if (this->hit_points > 0 && this->energy_points > 0)
 	{
 		std::cout << "[ClapTrap method] " << this->name << " won " << amount << " hit points." << std::endl;
 		this->energy_points--;
 		this->hit_points += amount;
 	}
+	else if (this->hit_points > 0)
+		std::cout << "[ClapTrap method] " << this->name << " is really tired and can't repair." << std::endl; 
 	else
-	{
-		std::cout << "[ClapTrap method] " << this->name << " is really tired and can't repaire." << std::endl; 
-	}
+		std::cout << "[ClapTrap method] " << this->name << " is dead and can't repair." << std::endl; 
 
 }

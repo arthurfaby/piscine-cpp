@@ -18,7 +18,9 @@ int	main( void )
 		dt.beRepaired(1);
 		dt.beRepaired(1);
 		dt.attack("Hortense");
-		dt.takeDamage(50);
+		dt.takeDamage(150);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
 		dt.highFiveGuys();
 		dt.whoAmI();
 	}
@@ -38,7 +40,9 @@ int	main( void )
 		dt.beRepaired(1);
 		dt.beRepaired(1);
 		dt.attack("Hortense");
-		dt.takeDamage(50);
+		dt.takeDamage(150);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
 		dt.highFiveGuys();
 		dt.whoAmI();
 	}
@@ -59,7 +63,9 @@ int	main( void )
 		dt.beRepaired(1);
 		dt.beRepaired(1);
 		dt.attack("Hortense");
-		dt.takeDamage(50);
+		dt.takeDamage(150);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
 		dt.highFiveGuys();
 		dt.whoAmI();
 	}
@@ -81,7 +87,9 @@ int	main( void )
 		dt.beRepaired(1);
 		dt.beRepaired(1);
 		dt.attack("Hortense");
-		dt.takeDamage(50);
+		dt.takeDamage(150);
+		dt.beRepaired(1);
+		dt.attack("Hortense");
 		dt.highFiveGuys();
 		dt.whoAmI();
 	}
