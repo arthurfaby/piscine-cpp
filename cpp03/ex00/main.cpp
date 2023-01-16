@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:11:23 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/10 17:12:23 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/16 11:26:36 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main( void )
 		ct.beRepaired(1);
 		ct.attack("Hortense");
 		ct.takeDamage(50);
+		ct.beRepaired(1);
+		ct.attack("Hortense");
 	}
 	std::cout << std::endl << " ########## Name constructor ##########" << std::endl;  
 	{
@@ -49,6 +51,8 @@ int	main( void )
 		ct.beRepaired(1);
 		ct.attack("Hortense");
 		ct.takeDamage(50);
+		ct.beRepaired(1);
+		ct.attack("Hortense");
 	}
 	std::cout << std::endl << " ########## Copy constructor ##########" << std::endl;  
 	{
@@ -68,6 +72,8 @@ int	main( void )
 		ct.beRepaired(1);
 		ct.attack("Hortense");
 		ct.takeDamage(50);
+		ct.beRepaired(1);
+		ct.attack("Hortense");
 	}
 	std::cout << std::endl << " ########## Copy assignement operator ##########" << std::endl;  
 	{
@@ -88,6 +94,8 @@ int	main( void )
 		ct.beRepaired(1);
 		ct.attack("Hortense");
 		ct.takeDamage(50);
+		ct.beRepaired(1);
+		ct.attack("Hortense");
 	}
 	return (0);
 }

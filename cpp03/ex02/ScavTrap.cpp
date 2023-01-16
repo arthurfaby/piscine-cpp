@@ -22,6 +22,7 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
 ScavTrap::ScavTrap( const ScavTrap& c ) : ClapTrap(c)
 {
 	std::cout << "[ScavTrap] Copy constructor called." << std::endl;
+	*this = c;
 	return ;
 }
 
@@ -43,16 +44,16 @@ ScavTrap::~ScavTrap( void )
 
 void	ScavTrap::attack( const std::string& target )
 {
-	if (this->energy_points > 0)
+	if (this->hit_points > 0 && this->energy_points > 0)
 	{
 		std::cout << "[ScavTrap method] " << this->name << " attacks " << target 
 			<< ", causing " << this->attack_damage << " points of damage!" << std::endl;
 		this->energy_points--;
 	}
-	else
-	{
+	else if (this->hit_points > 0)
 		std::cout << "[ScavTrap method] " << this->name << " is really tired and can't attack." << std::endl; 
-	}
+	else
+		std::cout << "[ScavTrap method] " << this->name << " is dead and can't attack." << std::endl; 
 }
 
 void	ScavTrap::guardGate( void )

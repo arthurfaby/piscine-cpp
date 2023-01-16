@@ -18,7 +18,9 @@ int	main( void )
 		st.beRepaired(1);
 		st.beRepaired(1);
 		st.attack("Hortense");
-		st.takeDamage(50);
+		st.takeDamage(150);
+		st.beRepaired(1);
+		st.attack("Hortense");
 		st.guardGate();
 	}
 	std::cout << std::endl << " ########## Name construstor ##########" << std::endl;  
@@ -37,7 +39,9 @@ int	main( void )
 		st.beRepaired(1);
 		st.beRepaired(1);
 		st.attack("Hortense");
-		st.takeDamage(50);
+		st.takeDamage(150);
+		st.beRepaired(1);
+		st.attack("Hortense");
 		st.guardGate();
 	}
 	std::cout << std::endl << " ########## Copy construstor ##########" << std::endl;  
@@ -57,7 +61,9 @@ int	main( void )
 		st.beRepaired(1);
 		st.beRepaired(1);
 		st.attack("Hortense");
-		st.takeDamage(50);
+		st.takeDamage(150);
+		st.beRepaired(1);
+		st.attack("Hortense");
 		st.guardGate();
 	}
 	std::cout << std::endl << " ########## Copy assignement operator ##########" << std::endl;  
@@ -78,7 +84,9 @@ int	main( void )
 		st.beRepaired(1);
 		st.beRepaired(1);
 		st.attack("Hortense");
-		st.takeDamage(50);
+		st.takeDamage(150);
+		st.beRepaired(1);
+		st.attack("Hortense");
 		st.guardGate();
 	}
 	return (0);
