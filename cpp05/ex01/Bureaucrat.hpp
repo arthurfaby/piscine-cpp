@@ -10,27 +10,21 @@ class Bureaucrat
 {
 
 private:
-	std::string		name;
-	unsigned int	grade;
+	const std::string	name;
+	unsigned int		grade;
 
 	class GradeTooHighException : public std::exception 
 	{
 	public:
-		const char*	what( void ) const throw()
-		{
-			return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooHighException" );
-		}
-		~GradeTooHighException( void ) throw () {}
+		const char*	what( void ) const throw();
+		~GradeTooHighException( void ) throw ();
 	};
 
 	class GradeTooLowException : public std::exception 
 	{
 	public:
-		const char*	what( void ) const throw()
-		{
-			return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooLowException" );
-		}
-		~GradeTooLowException( void ) throw() {}
+		const char*	what( void ) const throw();
+		~GradeTooLowException( void ) throw();
 	};
 
 public:

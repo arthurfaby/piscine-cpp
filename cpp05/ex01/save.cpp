@@ -21,9 +21,10 @@ Bureaucrat::Bureaucrat( std::string _name, unsigned int _grade ) : name(_name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& c ) : name(c.getName())
+Bureaucrat::Bureaucrat( const Bureaucrat& c )
 {
 	std::cout << "[\e[36mBureaucrat\e[39m] Copy constructor called." << std::endl;
+	name = c.name;
 	grade = c.grade;
 	return ;
 }
@@ -31,7 +32,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat& c ) : name(c.getName())
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& c )
 {
 	std::cout << "[\e[36mBureaucrat\e[39m] Copy assignment operator called." << std::endl;
-	std::cout << "--> Can't copy name because it is constant." << std::endl;
+	name = c.name;
 	grade = c.grade;
 	return *this;
 }
@@ -94,24 +95,4 @@ void	Bureaucrat::signForm( Form& form ) const
 		std::cerr << "[\e[36mBureaucrat : " << this->getName() << "\e[39m] couldn't sign " << "[\e[35mForm : " << form.getName() << "\e[39m] because it is already signed." << std::endl; 
 	else
 		form.beSigned(*this);
-}
-
-const char*	Bureaucrat::GradeTooHighException::what( void ) const throw()
-{
-	return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooHighException" );
-}
-
-const char*	Bureaucrat::GradeTooLowException::what( void ) const throw()
-{
-	return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooLowException" );
-}
-
-Bureaucrat::GradeTooHighException::~GradeTooHighException( void ) throw ()
-{
-	return ;
-}
-
-Bureaucrat::GradeTooLowException::~GradeTooLowException( void ) throw ()
-{
-	return ;
 }

@@ -12,27 +12,21 @@ class Form
 private:
 	const std::string	name;
 	bool				is_signed;
-	unsigned int		grade_to_sign;
-	unsigned int		grade_to_exec;
+	const unsigned int		grade_to_sign;
+	const unsigned int		grade_to_exec;
 
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char*	what( void ) const throw()
-		{
-			return ( "Form::GradeTooHighException" );
-		}
-		~GradeTooHighException( void ) throw () {}
+		const char*	what( void ) const throw();
+		~GradeTooHighException( void ) throw ();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char*	what( void ) const throw()
-		{
-			return ( "Form::GradeTooLowException" );
-		}
-		~GradeTooLowException( void ) throw () {}
+		const char*	what( void ) const throw();
+		~GradeTooLowException( void ) throw ();
 	};
 
 public:

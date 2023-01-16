@@ -6,7 +6,6 @@
 class Cat : public Animal
 {
 
-private:
 public:
 	Cat( void );
 	Cat(const Cat& c);

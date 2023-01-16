@@ -1,45 +1,85 @@
 #include <iostream>
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main( void )
 {
-	Bureaucrat	a("John", 100);
-	Bureaucrat	b("Julio", 3);
-	Bureaucrat	c("Juan", 148);
-	Bureaucrat	d("Juanito", 0);
-	Bureaucrat	e("Jose", 151);
+	std::cout << "----- ShrubberyCreationForm -----" << std::endl;
+	{
+		Bureaucrat	b("Eduardo", 140);
+		ShrubberyCreationForm	scf("home");
 
-	ShrubberyCreationForm	form();
+		try {
+			b.signForm(scf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't sign " << "[\e[35mAForm : "
+				<< scf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+		try {
+			b.executeForm(scf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't execute " << "[\e[35mAForm : "
+				<< scf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+	}
 
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << c << std::endl;
-	
-	b.increment();
-	b.increment();
-	std::cout << b << std::endl;
-	b.increment();
-	b.increment();
-	std::cout << b << std::endl;
-	
-	c.decrement();
-	c.decrement();
-	c.decrement();
-	std::cout << c << std::endl;
-	c.increment();
-	c.increment();
-	std::cout << c << std::endl;
-	c.decrement();
-	c.decrement();
-	std::cout << c << std::endl;
-	
-	//std::cout << form;
+	std::cout << std::endl << "----- RobotomyRequestForm -----" << std::endl;
+	{
+		Bureaucrat	b("Madeleine", 149);
+		RobotomyRequestForm	rrf("Gabrielle");
 
-//	c.signForm(form);
-//	a.signForm(form);
-	//b.signForm(form);
+		try {
+			b.signForm(rrf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't sign " << "[\e[35mAForm : "
+				<< rrf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+		try {
+			b.executeForm(rrf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't execute " << "[\e[35mAForm : "
+				<< rrf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+	}
+
+	std::cout << std::endl <<  "----- PresidentialPardonForm -----" << std::endl;
+	{
+		Bureaucrat	b("Vladislav", 20);
+		PresidentialPardonForm	ppf("Keenv");
+
+		try {
+			b.signForm(ppf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't sign " << "[\e[35mAForm : "
+				<< ppf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+		try {
+			b.executeForm(ppf);
+		}
+		catch (std::exception & e) {
+			std::cerr << "[\e[36mBureaucrat : " << b.getName()
+				<< "\e[39m] couldn't execute " << "[\e[35mAForm : "
+				<< ppf.getName() << "\e[39m] because of : [\e[31m"
+				<< e.what() << "\e[0m]" << std::endl; 
+		};
+	}
 
 	return (0);
 }

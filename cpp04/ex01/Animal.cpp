@@ -49,3 +49,9 @@ void	Animal::makeSound( void ) const
 	std::cout << "Random animal sound !" << std::endl;
 	return ;
 }
+
+Brain	*Animal::getBrain( void ) const
+{
+	std::cerr << "Simple animal doesn't have a brain." << std::endl;
+	return (NULL);
+}

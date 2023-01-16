@@ -5,34 +5,128 @@
 int	main( void )
 {
 	Bureaucrat	a("John", 100);
-	Bureaucrat	b("Julio", 3);
-	Bureaucrat	c("Juan", 148);
-	Bureaucrat	d("Juanito", 0);
-	Bureaucrat	e("Jose", 151);
+	Bureaucrat	d(a);
+	Bureaucrat	e = d;
+	Bureaucrat	b("Sylvia", 3);
+	Bureaucrat	c("Rodrigo", 149);
 	Form		form("FormTest", 100, 120);
+
+	try {
+		Bureaucrat	notgood("notgood", 765);
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	};
 
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << c << std::endl;
+
+	try {
+		c.decrement();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	};
+
+	std::cout << c << std::endl;
+
+	try {
+		c.decrement();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	};
+
+	std::cout << c << std::endl;
 	
-	b.increment();
-	b.increment();
+	try {
+		b.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		b.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+
 	std::cout << b << std::endl;
-	b.increment();
-	b.increment();
+
+	try {
+		b.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		b.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+
 	std::cout << b << std::endl;
-	
-	c.decrement();
-	c.decrement();
-	c.decrement();
+
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+
 	std::cout << c << std::endl;
-	c.increment();
-	c.increment();
+
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		c.increment();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+
 	std::cout << c << std::endl;
-	c.decrement();
-	c.decrement();
+
+	try {
+		c.decrement();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+	try {
+		c.decrement();
+	}
+	catch (std::exception &e) {
+		std::cerr << e.what() <<std::endl;
+	};
+
 	std::cout << c << std::endl;
-	
+
 	std::cout << form;
 
 	c.signForm(form);

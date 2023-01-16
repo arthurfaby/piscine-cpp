@@ -3,7 +3,7 @@
 
 Bureaucrat::Bureaucrat( std::string _name, unsigned int _grade ) : name(_name)
 {
-	std::cout << "[Bureaucrat] Constructor called." << std::endl;
+	std::cout << "[\e[36mBureaucrat\e[39m] Constructor called." << std::endl;
 	try
 	{
 		if ( _grade < 1 )
@@ -21,18 +21,17 @@ Bureaucrat::Bureaucrat( std::string _name, unsigned int _grade ) : name(_name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& c )
+Bureaucrat::Bureaucrat( const Bureaucrat& c ) : name(c.getName())
 {
-	std::cout << "[Bureaucrat] Copy constructor called." << std::endl;
-	name = c.name;
+	std::cout << "[\e[36mBureaucrat\e[39m] Copy constructor called." << std::endl;
 	grade = c.grade;
 	return ;
 }
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& c )
 {
-	std::cout << "[Bureaucrat] Copy assignment operator called." << std::endl;
-	name = c.name;
+	std::cout << "[\e[36mBureaucrat\e[39m] Copy assignment operator called." << std::endl;
+	std::cout << "--> Can't copy name because it is constant." << std::endl;
 	grade = c.grade;
 	return *this;
 }
@@ -45,7 +44,7 @@ std::ostream&	operator<<( std::ostream& os, const Bureaucrat& c )
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "[Bureaucrat] Destructor called." << std::endl;
+	std::cout << "[\e[36mBureaucrat\e[39m] Destructor called." << std::endl;
 	return ;
 }
 
@@ -87,4 +86,24 @@ void		Bureaucrat::decrement( void )
 		std::cerr << e.what() << std::endl;
 		grade = 150;
 	}
+}
+
+const char*	Bureaucrat::GradeTooHighException::what( void ) const throw()
+{
+	return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooHighException" );
+}
+
+const char*	Bureaucrat::GradeTooLowException::what( void ) const throw()
+{
+	return ( "[\e[31mERROR\e[39m] Bureaucrat::GradeTooLowException" );
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException( void ) throw ()
+{
+	return ;
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException( void ) throw ()
+{
+	return ;
 }
