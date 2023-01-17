@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:10:51 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/05 17:14:51 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/17 16:37:42 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Base	*generate(void)
 {
 	int	rd;
 
-	srand(time(NULL));
 	rd = rand() % 3;
 	switch(rd)
 	{
@@ -56,6 +55,7 @@ void	identity(Base& p)
 		A	&a = dynamic_cast<A&>(p);
 		(void)a;
 		std::cout << "The type of the reference is A." << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
 	try
@@ -63,6 +63,7 @@ void	identity(Base& p)
 		B	&b = dynamic_cast<B&>(p);
 		(void)b;
 		std::cout << "The type of the reference is B." << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
 	try
@@ -70,14 +71,17 @@ void	identity(Base& p)
 		C	&c = dynamic_cast<C&>(p);
 		(void)c;
 		std::cout << "The type of the reference is C." << std::endl;
+		return ;
 	}
 	catch (std::exception &e) {}
+	std::cerr << "Type is not valid." << std::endl;
 }
 
 int	main(void)
 {
 	Base	*base;
 
+	srand(time(NULL));
 	base = generate();
 	identity(base);
 	identity(*base);

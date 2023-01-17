@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:45:30 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/05 15:59:06 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/17 16:37:19 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ int	main(void)
 	std::cout << "----- After -----" << std::endl;
 	std::cout << "Address : " << new_data << std::endl;
 	std::cout << "[x = " << new_data->x << ", y = " << new_data->y << "]" << std::endl;
+	return (0);
 }

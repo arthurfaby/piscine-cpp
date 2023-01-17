@@ -1,7 +1,7 @@
 SRCS =	\
-		Base.cpp \
 		A.cpp \
 		B.cpp \
+		Base.cpp \
 		C.cpp \
 		main.cpp \
 		\

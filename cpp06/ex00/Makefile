@@ -1,4 +1,8 @@
 SRCS =	\
+		char.cpp \
+		double.cpp \
+		float.cpp \
+		int.cpp \
 		main.cpp \
 		\
 
