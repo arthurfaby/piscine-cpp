@@ -1,9 +1,10 @@
 #include <iostream>
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal( void ) : 
+WrongAnimal::WrongAnimal( void ) 
 {
 	std::cout << "[WrongAnimal] Default constructor called." << std::endl;
+	this->type = "WrongAnimal";
 	return ;
 }
 
@@ -13,17 +14,17 @@ WrongAnimal::WrongAnimal( std::string _type ) : type(_type)
 	return ;
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal& c ) : WrongAnimal(c)
+WrongAnimal::WrongAnimal( const WrongAnimal& c )
 {
-	(void) c;
 	std::cout << "[WrongAnimal] Copy constructor called." << std::endl;
+	*this = c;
 	return ;
 }
 
 WrongAnimal& WrongAnimal::operator=( const WrongAnimal& c )
 {
-	(void) c;
 	std::cout << "[WrongAnimal] Copy assignment operator called." << std::endl;
+	this->type = c.getType();
 	return *this;
 }
 

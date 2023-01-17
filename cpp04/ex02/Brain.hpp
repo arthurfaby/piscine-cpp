@@ -12,6 +12,7 @@ public:
 	Brain& operator=(const Brain& c );
 	~Brain( void );
 
+	void	printIdeas( void ) const;
 };
 
 #endif

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat( void ) : type("WrongCat")
+WrongCat::WrongCat( void ) : WrongAnimal("WrongCat")
 {
 	std::cout << "[WrongCat] Default constructor called." << std::endl;
 	return ;
@@ -9,15 +9,15 @@ WrongCat::WrongCat( void ) : type("WrongCat")
 
 WrongCat::WrongCat( const WrongCat& c ) : WrongAnimal(c)
 {
-	(void) c;
 	std::cout << "[WrongCat] Copy constructor called." << std::endl;
+	*this = c;
 	return ;
 }
 
 WrongCat& WrongCat::operator=( const WrongCat& c )
 {
-	(void) c;
 	std::cout << "[WrongCat] Copy assignment operator called." << std::endl;
+	this->type = c.getType();
 	return *this;
 }
 

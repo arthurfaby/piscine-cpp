@@ -13,7 +13,7 @@ public:
 	Animal( void );
 	Animal( std::string _type );
 	Animal(const Animal& c);
-	virtual	Animal& operator=(const Animal& c );
+	Animal& operator=(const Animal& c );
 	virtual ~Animal( void );
 
 	std::string		getType( void ) const;

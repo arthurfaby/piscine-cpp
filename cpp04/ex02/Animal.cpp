@@ -15,15 +15,15 @@ Animal::Animal( std::string _type ) : type(_type)
 
 Animal::Animal( const Animal& c )
 {
-	(void) c;
 	std::cout << "[Animal] Copy constructor called." << std::endl;
+	*this = c;
 	return ;
 }
 
 Animal& Animal::operator=( const Animal& c )
 {
-	(void) c;
 	std::cout << "[Animal] Copy assignment operator called." << std::endl;
+	this->type = c.getType();
 	return *this;
 }
 
@@ -48,4 +48,10 @@ void	Animal::makeSound( void ) const
 {
 	std::cout << "Random animal sound !" << std::endl;
 	return ;
+}
+
+Brain	*Animal::getBrain( void ) const
+{
+	std::cerr << "Simple animal doesn't have a brain." << std::endl;
+	return (NULL);
 }
