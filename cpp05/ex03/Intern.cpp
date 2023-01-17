@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:41:21 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/13 16:53:49 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/17 16:04:33 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,22 @@
 
 Intern::Intern( void )
 {
+	std::cout << "[\e[33mIntern\e[39m] Default constructor called." << std::endl;
 	this->forms[0] = "ShrubberyCreationForm";
 	this->forms[1] = "RobotomyRequestForm";
 	this->forms[2] = "PresidentialPardonForm";
-	return ;
 }
 
 Intern::Intern( const Intern& c )
 {
+	std::cout << "[\e[33mIntern\e[39m] Copy constructor called." << std::endl;
 	for (int i = 0; i < 3; i++)
 		this->forms[i] = c.forms[i];
-	return ;
 }
 
 Intern&	Intern::operator=( const Intern& c )
 {
+	std::cout << "[\e[33mIntern\e[39m] Copy assignment operator called." << std::endl;
 	for (int i = 0; i < 3; i++)
 		this->forms[i] = c.forms[i];
 	return *this;
@@ -40,7 +41,7 @@ Intern&	Intern::operator=( const Intern& c )
 
 Intern::~Intern( void )
 {
-	return ;
+	std::cout << "[\e[33mIntern\e[39m] Destructor called." << std::endl;
 }
 
 AForm	*Intern::makeForm( std::string form_name, std::string target )

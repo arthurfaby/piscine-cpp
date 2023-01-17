@@ -3,36 +3,44 @@
 
 int	main( void )
 {
-	Bureaucrat	a("John", 100);
+	Bureaucrat	a("John", 148);
 	Bureaucrat	d(a);
 	Bureaucrat	e("Operator", 12);
 	Bureaucrat	b("Sylvia", 3);
-	Bureaucrat	c("Rodrigo", 149);
+	try {
+		Bureaucrat	c("Rodrigo", 152);
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try {
+		Bureaucrat	c("Rodriga", 0);
+	}
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
 	e = d;
 	
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	std::cout << c << std::endl;
 	std::cout << d << std::endl;
 	std::cout << e << std::endl;
 
 	try {
-		c.decrement();
+		b.decrement();
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-
-	std::cout << c << std::endl;
 
 	try {
-		c.decrement();
+		b.decrement();
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << c << std::endl;
+	std::cout << b << std::endl;
 	
 	try {
 		b.increment();
@@ -65,60 +73,32 @@ int	main( void )
 	std::cout << b << std::endl;
 
 	try {
-		c.increment();
+		b.increment();
 	}
 	catch (std::exception &e) {
 		std::cerr << e.what() <<std::endl;
 	};
-	try {
-		c.increment();
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
-	try {
-		c.increment();
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
-	try {
-		c.increment();
-	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
-
-	std::cout << c << std::endl;
+	std::cout << b << std::endl;
 
 	try {
-		c.increment();
+		a.decrement();
 	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
 	try {
-		c.increment();
+		a.decrement();
 	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
-
-	std::cout << c << std::endl;
-
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
+	}
 	try {
-		c.decrement();
+		a.decrement();
 	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
-	try {
-		c.decrement();
+	catch (std::exception & e) {
+		std::cerr << e.what() << std::endl;
 	}
-	catch (std::exception &e) {
-		std::cerr << e.what() <<std::endl;
-	};
 
-	std::cout << c << std::endl;
+	std::cout << a << std::endl;
 	return (0);
 }

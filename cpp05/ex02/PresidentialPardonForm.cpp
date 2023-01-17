@@ -17,7 +17,8 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target ) :
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& c ) : AForm(c)
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& c ) :
+	AForm(c)
 {
 	std::cout << "[\e[35mPresidentialPardonForm\e[39m] Copy constructor called." << std::endl;
 	return ;

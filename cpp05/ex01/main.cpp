@@ -9,7 +9,6 @@ int	main( void )
 	Bureaucrat	e = d;
 	Bureaucrat	b("Sylvia", 3);
 	Bureaucrat	c("Rodrigo", 149);
-	Form		form("FormTest", 100, 120);
 
 	try {
 		Bureaucrat	notgood("notgood", 765);
@@ -127,11 +126,31 @@ int	main( void )
 
 	std::cout << c << std::endl;
 
-	std::cout << form;
+	std::cout << "\e[36m---------- FORMS ----------\e[0m" << std::endl;
+	{
+		Form		form("FormTest", 100, 120);
+		Form		form_cpy(form);
+		Form		*form_assign = new Form("youhou", 1, 5);
 
-	c.signForm(form);
-	a.signForm(form);
-	b.signForm(form);
+		*form_assign = form_cpy;
+		std::cout << form;
+		std::cout << form_cpy;
+		std::cout << *form_assign;
+	
+		c.signForm(form);
+		a.signForm(form);
+		b.signForm(form);
+
+		c.signForm(form_cpy);
+		a.signForm(form_cpy);
+		b.signForm(form_cpy);
+
+		c.signForm(*form_assign);
+		a.signForm(*form_assign);
+		b.signForm(*form_assign);
+
+		delete form_assign;
+	}
 
 	return (0);
 }

@@ -1,27 +1,21 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( std::string _name, unsigned int _grade ) : name(_name)
+Bureaucrat::Bureaucrat( std::string _name, unsigned int _grade ) :
+	name(_name)
 {
+	if ( _grade < 1 )
+		throw GradeTooHighException();
+	else if ( _grade > 150 )
+		throw GradeTooLowException();
+	else
+		grade = _grade;
 	std::cout << "[\e[36mBureaucrat\e[39m] Constructor called." << std::endl;
-	try
-	{
-		if ( _grade < 1 )
-			throw GradeTooHighException();
-		else if ( _grade > 150 )
-			throw GradeTooLowException();
-		else
-			grade = _grade;
-	}
-	catch ( const std::exception& e )
-	{
-		std::cerr << e.what() << std::endl;
-		grade = 0;
-	}
 	return ;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& c ) : name(c.getName())
+Bureaucrat::Bureaucrat( const Bureaucrat& c ) :
+	name(c.getName())
 {
 	std::cout << "[\e[36mBureaucrat\e[39m] Copy constructor called." << std::endl;
 	grade = c.grade;

@@ -16,7 +16,6 @@ Form::Form( const Form& c ) :
 	grade_to_sign(c.getGradeToSign()),
 	grade_to_exec(c.getGradeToExec())
 {
-	(void) c;
 	std::cout << "[\e[35mForm\e[39m] Copy constructor called." << std::endl;
 	this->is_signed = c.isSigned();
 	return ;
@@ -24,7 +23,6 @@ Form::Form( const Form& c ) :
 
 Form& Form::operator=( const Form& c )
 {
-	(void) c;
 	std::cout << "[\e[35mForm\e[39m] Copy assignment operator called." << std::endl;
 	std::cout << "Can't copy name, grade_to_sign and grade_to_exec because they are constants." << std::endl;
 	this->is_signed = c.isSigned();
