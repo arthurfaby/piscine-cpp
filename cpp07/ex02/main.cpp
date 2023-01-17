@@ -31,6 +31,7 @@ int main(void)
 	print_array("cpy", cpy, cpy.size());	
 	print_array("ten", ten, ten.size());	
 
+
 	try {
 		std::cout << empty[0];
 	}
