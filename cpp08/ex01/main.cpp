@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:41:19 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/19 10:19:04 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/19 15:48:49 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,19 @@ int	main(void)
 	vec.push_back(8);
 	vec.push_back(9);
 	vec.push_back(10);
+	std::cout << "\e[36m---------- TESTING CONSTRUCTORS ----------\e[0m" << std::endl;
+	{
+		Span sp = Span(10);
+
+		sp.fill(vec.begin(), vec.end());
+		Span	cpy(sp);
+		Span	eq;
+
+		eq = sp;
+		std::cout << "sp : " << sp << std::endl;
+		std::cout << "cpy : " << cpy << std::endl;
+		std::cout << "eq : " << eq << std::endl;
+	}
 	{
 		Span sp = Span(10);
 
@@ -54,13 +67,6 @@ int	main(void)
 		catch (const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
-		/*try {	for (int i = 0; i < 50001; i++)
-				sp.addNumber(rand());
-			}
-		catch (std::exception & e)
-		{
-			std::cerr << e.what() << std::endl;
-		}*/
 		std::cout << "SPAN : ";
 		std::cout << sp <<std::endl;
 		try {
@@ -70,6 +76,13 @@ int	main(void)
 		catch(std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
+		try {
+			sp.fill(vec.begin(), vec.end());
+		}
+		catch (const std::exception & e) {
+			std::cerr << e.what() << std::endl;
+		}
+
 
 	}
 	Span	sp(5);

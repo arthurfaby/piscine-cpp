@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 10:22:14 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/19 12:56:57 by afaby            ###   ########.fr       */
+/*   Updated: 2023/01/19 15:35:19 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,24 @@
 
 int main( void )
 {
+	std::cout << "\e[36m---------- Testing constructors ----------\e[0m" << std::endl;
+	{
+		MutantStack<int> ms;
+		
+		ms.push(1);
+		ms.push(2);
+		ms.push(3);
+		ms.push(4);
+
+		MutantStack<int> ms_cpy(ms);
+		MutantStack<int> ms_eq;
+
+		ms_eq = ms;
+		std::cout << "MS top : " << ms.top() << std::endl;
+		std::cout << "MS_CPY top : " << ms_cpy.top() << std::endl;
+		std::cout << "MS_EQ top : " << ms_eq.top() << std::endl;
+	}
+	std::cout << std::endl;
 	std::cout << "\e[36m---------- MutantStack int ----------\e[0m" << std::endl;
 	{
 		MutantStack<int> mstack;
