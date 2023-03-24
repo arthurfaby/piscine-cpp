@@ -136,6 +136,7 @@ int	main( void )
 			};
 	
 		}
+		delete scf;
 	}
 
 	std::cout << std::endl << "----- RobotomyRequestForm -----" << std::endl;
@@ -167,6 +168,7 @@ int	main( void )
 			};
 	
 		}
+		delete rrf;
 	}
 
 	std::cout << std::endl <<  "----- PresidentialPardonForm -----" << std::endl;
@@ -196,8 +198,8 @@ int	main( void )
 					<< scf->getName() << "\e[39m] because of : [\e[31m"
 					<< e.what() << "\e[0m]" << std::endl; 
 			};
-	
 		}
+		delete scf;
 	}
 
 	return (0);

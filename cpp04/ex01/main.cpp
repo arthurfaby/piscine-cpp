@@ -36,7 +36,7 @@ int	main( void )
 
 	std::cout << std::endl << "\e[36m---------- CAT ----------\e[0m" << std::endl;
 	{
-		Cat		*cat = new Cat();
+		Cat			*cat = new Cat();
 		Cat		*cat2 = new Cat();
 		Cat		*cat_cpy = new Cat(*cat);
 		Cat		*cat_assignment = new Cat();

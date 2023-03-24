@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap( std::string _name ) :
 {
 	std::cout << "[DiamondTrap] Name constructor called." << std::endl;
 	name = _name;
-	hit_points = 100; //FragTrap::hit_points;
+	hit_points = 100;	//FragTrap::hit_points;
 	energy_points = 50; //ScavTrap::energy_points;
 	attack_damage = 30; //FragTrap::attack_damage;
 	return ;	

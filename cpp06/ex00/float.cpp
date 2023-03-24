@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:30:02 by afaby             #+#    #+#             */
-/*   Updated: 2023/01/17 16:30:13 by afaby            ###   ########.fr       */
+/*   Updated: 2023/02/16 18:15:08 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ static void	convert_all_from_float(std::string arg, float f)
 	int	tmp;
 
 	std::cout << "char: ";
-		if (f < 0 || f > 255)
-			std::cout << "impossible";
-		else if (std::isprint(f))
-			std::cout << "'" << static_cast<char>(f) << "'";
-		else
-			std::cout << "non displayable";
-		std::cout << std::endl;
-		if (!(std::stringstream(arg) >> tmp))
-			std::cout << "int: overflow" << std::endl;
-		else
-			std::cout << "int: " << static_cast<int>(f) << std::endl;
-		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-		std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(f) << std::endl;
+	if (f < 0 || f > 255)
+		std::cout << "impossible";
+	else if (std::isprint(f))
+		std::cout << "'" << static_cast<char>(f) << "'";
+	else
+		std::cout << "non displayable";
+	std::cout << std::endl;
+	if (!(std::stringstream(arg) >> tmp))
+		std::cout << "int: overflow" << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(f) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(f) << std::endl;
 
 }
 
